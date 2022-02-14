@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdonisJS</title>
+ 
+</head>
+<body>
+
+  <main>
+    <div>
+      <h1 class="title"> Encrypt </h1>
+      
+      {{--  <form action="/encrypt" method="POST">  --}}
+        
+            <form action="{{ route('EncryptionsController.encrypt') }}" method="POST">
+        <label for="password">
+            Enter the password :
+        </label>
+            <input type="text" name="password" id="password"/>
+            @if(flashMessages?.has('errors.password'))
+                <p style="color: #f10418;"> {{ flashMessages.get('errors.password') }} </p>
+        @endif
+            <input type="submit" value="Encrypt">
+        </form>
+      
+    </div>
+  </main>
+</body>
+</html>
